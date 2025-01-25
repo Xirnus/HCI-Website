@@ -1,0 +1,112 @@
+*{
+    font-family: sans-serif;
+}
+
+#backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.pictureleft {
+    background-image: url('elements/changli.png');
+    background-size: cover;
+    width: 400px;
+    height:600px;
+}
+
+.pictureright {
+    background-image: url('elements/raiden.png');
+    background-size: cover;
+    width: 500px;
+    height:500px;
+}
+
+.left {
+    margin-right: 150px;
+}
+
+.right {
+    margin-left: 150px;
+}
+
+.content {
+    text-align: center;
+    background-color: #ffffff44;
+    color:#4deeea;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 30px;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: #f000ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#hiddenAboutme, #hiddenSkills {
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.bounce {
+    animation: bounce 5s infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotate {
+    animation: rotate 8s linear infinite;
+}

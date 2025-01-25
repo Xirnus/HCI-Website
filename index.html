@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="elements/video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="container">
+        <div class="pictureleft left rotate"></div>
+        <div class="content bounce">
+            <h1 class="rainbow">Welcome To My Page</h1>
+            <h2 class="rotate">My name is James Edward L. Verceles, A BSCS - 3rd Year Student, currently studying in Perpetual Molino Campus</h2>
+            <div class="links">
+                <h3><a href="#" onclick="toggleVisibility('hiddenAboutme')">About Me</a></h3>
+                <h3><a href="#" onclick="toggleVisibility('hiddenSkills')">Skills</a></h3>
+            </div>
+            <div id="hiddenAboutme" class="hidden">
+                <h4>My hobbies are playing video games, reading books and coding.</h4>
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nostrum molestiae rerum adipisci porro! Quisquam commodi quas officiis. Accusamus, nobis vero labore debitis laboriosam excepturi corrupti fugit error et voluptatem?</h4>    
+            </div>
+            <ul id="hiddenSkills" class="hidden">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>Python</li>
+            </ul>
+        </div>
+        <div class="pictureright right rotate"></div>
+    </div>
+    <script>
+        function fadeIn(element) {
+            element.style.display = "block";
+            element.style.opacity = 0;
+            element.style.height = "auto";
+            let height = element.clientHeight + "px";
+            element.style.height = "0px";
+            setTimeout(() => {
+                element.style.height = height;
+                element.style.opacity = 1;
+            }, 10);
+        }
+
+        function fadeOut(element) {
+            element.style.opacity = 1;
+            element.style.height = element.clientHeight + "px";
+            setTimeout(() => {
+                element.style.height = "0px";
+                element.style.opacity = 0;
+            }, 10);
+            setTimeout(() => {
+                element.style.display = "none";
+            }, 500); // Match the duration of the transition
+        }
+
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                fadeIn(element);
+            } else {
+                fadeOut(element);
+            }
+        }
+
+        window.onload = function() {
+            fadeOut(document.getElementById('hiddenAboutme'));
+            fadeOut(document.getElementById('hiddenSkills'));
+        };
+    </script>
+</body>
+</html>
